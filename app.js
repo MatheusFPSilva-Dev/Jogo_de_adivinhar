@@ -2,6 +2,7 @@
 let numerosexclusos = [];
 let numeroSecreto = numeroAleatorio();
 let tents = 1;
+let rodadas = 1;
 
 
 
@@ -12,6 +13,7 @@ function textoDasTags(tag, texto){
 
 textoDasTags('h1', 'jogo secreto!');
 textoDasTags('p', 'escolha um numero entre 1 e 10!');
+textoDasTags('#rodada', 'n° rodadas: ' + rodadas);
 
 
 function verificarChute(){
@@ -23,20 +25,25 @@ function verificarChute(){
            textoDasTags('p', 'você foi o vencedor com ' + tents + ' ' + menstents);
            console.log(numerosexclusos);
            document.getElementById('reiniciar').removeAttribute('disabled');
+           
          } else {
               if (chute > numeroSecreto){
                  textoDasTags('h1', 'voce errou!');
                  textoDasTags('p', 'o numero secreto é menor que ' + chute);
                  limparinput();
+                 
          } else {
              textoDasTags('h1', 'voce errou!');
              textoDasTags('p', 'o numero secreto é maior que ' + chute);
              limparinput();
+             
          } 
             if (chute < 1 || chute > 10){
                textoDasTags('h1', 'Muito burro kkkkkk');
                textoDasTags('p', 'digite um numero entre 1 e 10!');
                limparinput();
+              
+               
             }
          
 }
@@ -44,6 +51,7 @@ function verificarChute(){
 
     console.log(chute == numeroSecreto);
     tents++;
+    
      
 }
 
@@ -72,4 +80,7 @@ function reiniciarJogo(){
     textoDasTags('p', 'escolha um numero entre 1 e 10!');
     limparinput();
     document.getElementById('reiniciar').setAttribute('disabled', true);
+    rodadas++;
+    textoDasTags('#rodada', 'n° rodadas: ' + rodadas);
+    
 }
