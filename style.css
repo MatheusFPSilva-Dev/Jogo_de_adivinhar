@@ -103,6 +103,17 @@ button {
     font-family: 'Inter', sans-serif;
 }
 
+#rodada{
+   position: relative;
+   left: 490px;
+   top: -10px;   
+}
+#tentativas{
+   position: relative;
+   left: 455px;
+   top: -10px;
+}
+
 .texto__paragrafo {
     font-size: 32px;
     font-weight: 400;
