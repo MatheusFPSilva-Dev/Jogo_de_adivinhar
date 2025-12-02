@@ -12,7 +12,7 @@ function textoDasTags(tag, texto){
 }
 
 textoDasTags('h1', 'jogo secreto!');
-textoDasTags('p', 'escolha um numero entre 1 e 100!');
+textoDasTags('p', 'escolha um numero entre 1 e 50!');
 textoDasTags('#rodada', 'n° rodadas: ' + rodadas);
 
 
@@ -38,7 +38,7 @@ function verificarChute(){
              limparinput();
              
          } 
-            if (chute < 1 || chute > 10){
+            if (chute < 1 || chute > 50){
                textoDasTags('h1', 'Muito burro kkkkkk');
                textoDasTags('p', 'digite um numero entre 1 e 10!');
                limparinput();
@@ -60,8 +60,8 @@ function limparinput(){
 }
 
 function numeroAleatorio() {
-    let nAleatorio = parseInt(Math.random() * 100) + 1;
-    if (numerosexclusos.length == 100){
+    let nAleatorio = parseInt(Math.random() * 50) + 1;
+    if (numerosexclusos.length == 50){
     numerosexclusos = [];
 }
     if (numerosexclusos.includes(nAleatorio)) {
