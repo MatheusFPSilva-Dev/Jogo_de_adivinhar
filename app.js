@@ -70,6 +70,20 @@ function reiniciarJogo(){
     
 }
 
+function numeroAleatorio() {
+    
+    let nAleatorio = parseInt(Math.random() * nivel) + 1;
+    if (numerosexclusos.length == nivel){
+    numerosexclusos = [];
+}
+    if (numerosexclusos.includes(nAleatorio)) {
+        return numeroAleatorio();
+} else {
+    numerosexclusos.push(nAleatorio);
+    return nAleatorio;
+}
+}
+
 function nivelFacil(){
     textLevel = '10';
     nivel = 10;
@@ -92,19 +106,6 @@ function niveldificil(){
     reiniciarJogo();
 }
 
-function numeroAleatorio() {
-    
-    let nAleatorio = parseInt(Math.random() * nivel) + 1;
-    if (numerosexclusos.length == nivel){
-    numerosexclusos = [];
-}
-    if (numerosexclusos.includes(nAleatorio)) {
-        return numeroAleatorio();
-} else {
-    numerosexclusos.push(nAleatorio);
-    return nAleatorio;
-}
-}
 
 function teclas(){
     let BtnEnter = document.addEventListener('keydown',function(enter){

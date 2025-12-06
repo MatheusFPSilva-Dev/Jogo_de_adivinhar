@@ -41,18 +41,19 @@ body::before {
     margin-left: 30px;
 }
 
-
 .container__conteudo {
     display: flex;
     align-items: center;
-    position: absolute;
-    bottom: 0;
-    margin-left: 280px;
+    justify-content: center;
+    position: relative;
+    margin-left: 170px;
+    bottom: 10px;
+    width: 100%;
 }
 
 .container__informacoes {
     flex: 1;
-    padding: 3rem;
+    padding: 4rem;
 }
 
 .container__botao {
@@ -67,7 +68,7 @@ body::before {
 }
 
 .container__texto {
-    margin: 16px 0 16px 0;
+    margin: 16px 0 16px 150px;
 }
 
 .container__texto-azul {
@@ -94,15 +95,17 @@ body::before {
 
 .botoeslevel {
     display: flex;
-    gap:10px;
-    margin-left: -15em;
-    margin-top: -2em;
+    gap: 5px;
+   
+    
+   
 }
 
 .btnfac, .btnmed, .btndif {
+    
     border-radius: 16px;
     background: #1875E8;
-    padding: 8px 16px;
+    padding: 8px 26px;
     font-size: 16px;
     font-weight: 600;
     border: none;
@@ -110,15 +113,11 @@ body::before {
     cursor: pointer;
 }
 
-
-
-
-
-
 h1 {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 72px;
     padding-bottom: 3rem;
+   
 }
 
 
@@ -128,8 +127,9 @@ button {
 
 #rodada{
    position: relative;
-   left: 490px;
-   top: -10px;   
+   left: 400px;
+   margin-left: 100px;  
+   margin-top: 10px;
 }
 
 
