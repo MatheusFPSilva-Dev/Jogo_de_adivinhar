@@ -92,13 +92,36 @@ body::before {
     gap: 2em;
 }
 
+.botoeslevel {
+    display: flex;
+    gap:10px;
+    margin-left: -15em;
+    margin-top: -2em;
+}
+
+.btnfac, .btnmed, .btndif {
+    border-radius: 16px;
+    background: #1875E8;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+}
+
+
+
+
+
+
 h1 {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 72px;
     padding-bottom: 3rem;
 }
 
-p,
+
 button {
     font-family: 'Inter', sans-serif;
 }

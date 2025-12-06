@@ -1,8 +1,16 @@
 
+let nivel = 10;
 let numerosexclusos = [];
 let numeroSecreto = numeroAleatorio();
+teclas();
 let tents = 1;
 let rodadas = 1;
+let textLevel = "10";
+
+
+textoDasTags('h1', 'jogo secreto!');
+textoDasTags('p', 'escolha um numero entre 1 e ' + textLevel);
+textoDasTags('#rodada', 'n° rodadas: ' + rodadas);
 
 
 
@@ -10,11 +18,6 @@ function textoDasTags(tag, texto){
    let digitar = document.querySelector(tag);
        digitar.innerHTML = texto;
 }
-
-textoDasTags('h1', 'jogo secreto!');
-textoDasTags('p', 'escolha um numero entre 1 e 50!');
-textoDasTags('#rodada', 'n° rodadas: ' + rodadas);
-
 
 function verificarChute(){
     let chute = document.querySelector('input').value;
@@ -38,9 +41,9 @@ function verificarChute(){
              limparinput();
              
          } 
-            if (chute < 1 || chute > 50){
-               textoDasTags('h1', 'Muito burro kkkkkk');
-               textoDasTags('p', 'digite um numero entre 1 e 10!');
+            if (chute < 1 || chute > nivel){
+               textoDasTags('h1', 'Digite um numero valido!');
+               textoDasTags('p', 'digite um numero entre 1 e ' + textLevel,);
                limparinput();
               
                
@@ -55,13 +58,44 @@ function verificarChute(){
      
 }
 
-function limparinput(){
-    document.querySelector('input').value = '';
+function reiniciarJogo(){
+    numeroSecreto = numeroAleatorio();
+    tents = 1;
+    textoDasTags('h1', 'jogo secreto!');
+    textoDasTags('p', 'escolha um numero entre 1 e ' + textLevel,);
+    limparinput();
+    document.getElementById('reiniciar').setAttribute('disabled', true);
+    rodadas++;
+    textoDasTags('#rodada', 'n° rodadas: ' + rodadas);
+    
+}
+
+function nivelFacil(){
+    textLevel = '10';
+    nivel = 10;
+    rodadas = 0;
+    reiniciarJogo();
+
+}
+
+function nivelmedio(){
+    textLevel = '50';
+    nivel = 50;
+    rodadas = 0;
+    reiniciarJogo();
+}
+
+function niveldificil(){
+    textLevel = '100';
+    nivel = 100;
+    rodadas = 0;
+    reiniciarJogo();
 }
 
 function numeroAleatorio() {
-    let nAleatorio = parseInt(Math.random() * 50) + 1;
-    if (numerosexclusos.length == 50){
+    
+    let nAleatorio = parseInt(Math.random() * nivel) + 1;
+    if (numerosexclusos.length == nivel){
     numerosexclusos = [];
 }
     if (numerosexclusos.includes(nAleatorio)) {
@@ -70,17 +104,17 @@ function numeroAleatorio() {
     numerosexclusos.push(nAleatorio);
     return nAleatorio;
 }
-
 }
 
-function reiniciarJogo(){
-    numeroSecreto = numeroAleatorio();
-    tents = 1;
-    textoDasTags('h1', 'jogo secreto!');
-    textoDasTags('p', 'escolha um numero entre 1 e 10!');
-    limparinput();
-    document.getElementById('reiniciar').setAttribute('disabled', true);
-    rodadas++;
-    textoDasTags('#rodada', 'n° rodadas: ' + rodadas);
-    
+function teclas(){
+    let BtnEnter = document.addEventListener('keydown',function(enter){
+    if(enter.key == 'Enter'){
+        verificarChute();
+    }
+});
 }
+
+function limparinput(){
+    document.querySelector('input').value = '';
+}
+
