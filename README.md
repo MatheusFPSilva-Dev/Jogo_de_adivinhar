@@ -3,7 +3,7 @@
 The game is based on guessing, where your goal is to find the correct number.
 <hr>
 This is one of the projects I developed while taking the Alura course, in the beginner programming program.
-<br>                                               
+<hr>                                               
                                                
                                                
                                                
